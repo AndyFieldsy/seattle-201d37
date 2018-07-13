@@ -62,22 +62,30 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-  var totalSum = a + b + c;
-  var totalProduct = a * b * c;
+  
+  var addNum = sum(a,b)[0];
+  var addNum2 =sum(addNum,c);
+
+  var mulNum = multiply(a,b)[0];
+  var mulNum2 = multiply(mulNum,c);
+
+  // var totalSum = a + b + c;
+  // var totalProduct = a * b * c;
+
   var arrSum = [];
-  arr.push(totalSum);
+  arrSum.push(addNum2[0]);
+
   var arrProduct = [];
-  arr.push(totalProduct);
-  var msgS = 'The sum of ' + a + ', ' + b + ', and ' + c + ' is ' + totalSum + '.';
-  arr.push(msgS);
-  var msgP = 'the product of ' + a + ', ' + b + '. and ' + c + ' is ' + totalProduct + '.';
-  arr.push(msgP);
+  arrSum.push(mulNum2[0]);
+  
+  var msgS = a + ' and ' + b + ' and ' + c + ' sum to ' + addNum2[0] + '.';
+  arrSum.push(msgS);
+
+  var msgP = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + mulNum2[0] + '.';
+  arrSum.push(msgP);
 
   return arrSum;
-  return [a + b + c, 'The sum of ' + a + ', ' + b + ', and ' + c + ' is ' + totalSum + '.'];
-  return arrProduct;
-  return [a * b * c, 'the product of ' + a + ', ' + b + '. and ' + c + ' is ' + totalProduct + '.'];
-
+  
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
